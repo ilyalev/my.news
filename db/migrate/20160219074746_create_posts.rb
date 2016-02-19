@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :title
       t.string :channel
       t.text :text
+      t.references :channel, index: true, foreign_key: true
 
       t.timestamps
     end

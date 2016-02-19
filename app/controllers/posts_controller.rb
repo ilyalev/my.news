@@ -24,8 +24,8 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.json
   def new
-    @post = Post.new
-
+    #@post = Post.new
+       
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @post }
@@ -40,7 +40,9 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
+    #@post = @channel.@post.new(params[:post])
+    @channel = Channel.find(params[:channel_id])
+    @post = @channel.post.build(params[:post)
     @post.channel = @channel.title
 
     respond_to do |format|

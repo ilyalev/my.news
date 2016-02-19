@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20160219074746) do
     t.string   "author"
     t.string   "image_url"
     t.decimal  "price",       :precision => 8, :scale => 2
+    t.integer  "user_id"
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
   end
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20160219074746) do
     t.string   "title"
     t.string   "channel"
     t.text     "text"
+    t.integer  "channel_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
