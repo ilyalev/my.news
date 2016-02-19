@@ -1,4 +1,7 @@
 Authentication::Application.routes.draw do
+  resources :posts
+
+
   resources :channels
 
 

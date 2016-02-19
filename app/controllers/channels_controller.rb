@@ -41,7 +41,10 @@ class ChannelsController < ApplicationController
   # POST /channels.json
   def create
     @channel = Channel.new(params[:channel])
-
+    if current_user != nil 
+      @channel.author = current_user.email
+    end
+    
     respond_to do |format|
       if @channel.save
         format.html { redirect_to @channel, notice: 'Channel was successfully created.' }
