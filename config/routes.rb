@@ -8,14 +8,10 @@ Authentication::Application.routes.draw do
 
   resources :sessions
   resources :password_resets
-
-  
-    #get 'channel' => 'channels#index'
- #   resources :posts
-    #get 'posts' => 'posts#index'
-  
+ 
   resources :users
-    resources :channels
-          resources :posts
-
+    resources :channels do
+          resources :posts, only: [:index, :new, :create]
+  end
+resources :posts, only: [:show, :edit, :update, :destroy]
 end
