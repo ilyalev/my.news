@@ -11,7 +11,7 @@ Authentication::Application.routes.draw do
  
   resources :users
     resources :channels do
-          resources :posts, only: [:index, :new, :create]
+          resources :posts
   end
-resources :posts, only: [:show, :edit, :update, :destroy]
+
 end

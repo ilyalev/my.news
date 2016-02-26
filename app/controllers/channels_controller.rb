@@ -40,7 +40,9 @@ class ChannelsController < ApplicationController
   # POST /channels
   # POST /channels.json
   def create
-    @channel = Channel.new(params[:channel])
+   # @channel = Channel.new(params[:channel])
+   @user = User.find(current_user)
+    @channel = @user.channels.build(params[:channel])
         
     if current_user != nil 
       @channel.author = current_user.email

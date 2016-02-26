@@ -9,14 +9,9 @@
 <dd><%= truncate(strip_tags(post.text),
 length: 80) %></dd>
 </td>
-<td class="list_actions">
-
-<%= link_to 'Edit', edit_post_path(post) %><br/>
-<%= link_to 'Destroy', channel_posts_path(@channel), post_item, method: :delete,
-data: { confirm: 'Are you sure?' } %>
-</td>
 </tr>
 <% end %>
 </table>
 <br />
-<%= link_to 'new post', new_channel_post_path %>
+<%= link_to 'new post', new_channel_post_path %><br>
+<%= link_to 'Back to Channel list', channels_path %>

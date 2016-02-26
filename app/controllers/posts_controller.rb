@@ -2,8 +2,9 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
-
+    #@channel = Channel.find(params[:channel_id])
+    @posts = Channel.find(params[:channel_id]).posts
+    #@posts = Post.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -13,8 +14,8 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @channel = Channel.find(params[:id])
-    @post = Channel.posts.build
+   @posts = Channel.find(params[:channel_id]).post.find(params[:id])
+    #@post = Post.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,7 +27,8 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
 
-    @post = Post.new
+  @channel = Channel.find(params[:channel_id])
+  @post = @channel.posts.build
       
     respond_to do |format|
       format.html # new.html.erb
@@ -45,13 +47,12 @@ class PostsController < ApplicationController
     #@post = @channel.@post.new(params[:post])
 
     @channel = Channel.find(params[:channel_id])
-    @post = @channel.post.build(params[:post])
-    @post.channel = @channel.title
+    @post = @channel.posts.build(params[:post])
+  #  @post.channel = @channel.title
 
-    binding.pry
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to channel_posts_path, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
