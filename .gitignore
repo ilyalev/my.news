@@ -32,3 +32,4 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 >>>>>>> 279574ae749361dd6f58fff05d24f2650aa72070
+/app/assets/stylesheets/sessions.css

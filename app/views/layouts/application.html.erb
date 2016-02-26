@@ -9,24 +9,10 @@
     <link rel="shortcut icon" href="ico/favicon.ico">
 
     <title>Dashboard Template for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
-    
-
-    <!-- Custom styles for this template -->
-    
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-          <![endif]-->
-
+  
   <%= stylesheet_link_tag    "application" %>
   <%= csrf_meta_tags %>
+<<<<<<< HEAD
   <%= stylesheet_link_tag    "bootstrap.min.css" %>
   <%= stylesheet_link_tag    "dashboard.css" %>
   <%= stylesheet_link_tag    "carousel.css" %>
@@ -37,7 +23,7 @@
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -49,10 +35,13 @@
           <a class="navbar-brand" href="#">My.News</a>
         </div>
 
+</head>
+<body class="<%=controller.controller_name%>">
+
         <div class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
           <% if current_user %>
-          <font color="red">Logged in as <%= current_user.email %>.</font>
+          <%= current_user.email %>
         <%= link_to "Log out", logout_path %>
       <% else %>
         <%= link_to "Sign up", signup_path %> or
