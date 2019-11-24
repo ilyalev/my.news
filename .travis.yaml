@@ -1,0 +1,4 @@
+notifications:
+  slack: elf-ssv5597:pAoWVu81Y15khr50zcHMTKOi
+
+travis encrypt "elf-ssv5597:pAoWVu81Y15khr50zcHMTKOi" --add notifications.slack
